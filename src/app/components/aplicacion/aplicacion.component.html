@@ -1,0 +1,113 @@
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column">
+    <!-- Main Content -->
+    <div id="content">
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h2 class="h3 mb-0 text-gray-800" id="administracion">ADMINISTRACIÓN DE APP</h2>
+            </div>
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <p class=" mb-0 text-gray-800" id="lista">LISTA DE MÓDULOS A EDITABLES EN HOME</p>
+            </div>
+
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <p class=" mb-0 text-gray-800" id="administracion">Lista de banners en Home</p>
+            </div>
+            <div class="container ">
+                <table class="table table-striped  shadow" id="tabla">
+                    <thead>
+                        <tr>
+                            <th scope="col">Posición</th>
+                            <th scope="col">Estatus</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Publicidad</th>
+                            <th scope="col">Página</th>
+                            <th scope="col">Fecha/Hora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let variable of elementos; let i = index">
+                            <th scope=" row ">{{i+1}}</th>
+                            <td>
+                                <span> 
+                                    <div *ngIf="variable.estatus !='Vencido' && variable.estatus !='Activo' " class="status-indicator bg-primary "></div>
+                                    <div *ngIf="variable.estatus==='Activo' " class="status-indicator bg-success "></div>
+                                    <div *ngIf="variable.estatus==='Vencido' " class="status-indicator bg-danger "></div>
+                                     {{ variable.estatus}}
+                                </span>
+                            </td>
+                            <td>{{ variable.nombre}} </td>
+                            <td> <img src="{{ variable.publicidad }} " class="imagen " [alt]="variable.nombre "> </td>
+                            <td>{{ variable.pagina}} </td>
+                            <td>{{ variable.fecha}} </td>
+
+                        </tr>
+                        <!-- <tr >
+                            <th scope="row ">1</th>
+                            <td>
+                                <div class="status-indicator bg-success "></div>Activo</td>
+                            <td>Regreso a clases</td>
+                            <td><img src="./assets/img/guitarra.jpg " width="110 "></td>
+                            <td>Landing</td>
+                            <td>11/08/19-12:00</td>
+                        </tr>
+                        <tr id="par ">
+                            <th scope="row ">2</th>
+                            <td>
+                                <p class="status-indicator bg-danger "></p>Vencido
+                            </td>
+                            <td>Hotsale</td>
+                            <td><img src="./assets/img/guitarra.jpg " width="110 "></td>
+                            <td>Landing</td>
+                            <td>10/09/19-12:00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">3</th>
+                            <td>
+                                <div class="status-indicator bg-primary "></div>1 día: 30 min</td>
+                            <td>Celulares y Tecnología</td>
+                            <td><img src="./assets/img/guitarra.jpg " width="110 "></td>
+                            <td>Categoría</td>
+                            <td>08/09/19-12:00</td>
+                        </tr>
+                        <tr id="par ">
+                            <th scope="row ">4</th>
+                            <td>
+                                <div class="status-indicator bg-success "></div>Activo</td>
+                            <td>Samsung</td>
+                            <td><img src="./assets/img/guitarra.jpg " width="110 "></td>
+                            <td>Producto</td>
+                            <td>08/11/19-12:00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row ">5</th>
+                            <td>
+                                <div class="status-indicator bg-success "></div>Activo</td>
+                            <td>PrimaveraVerano</td>
+                            <td><img src="./assets/img/guitarra.jpg " width="110 "></td>
+                            <td>Corner</td>
+                            <td>07/11/19-12:00</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="container seccion ">
+            <div class="row col-12 ">
+                <div class="col-7 "></div>
+                <div class="col-2 text-center seccion2 ">
+                    <button class="btn btn-secondary btn-lg "> Editar </button>
+                </div>
+                <div class="col-3 text-right seccion3 ">
+                    <button class="btn btn-outline-primary btn-lg ">Enviar a APP</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End of Main Content -->
+</div>
+<!-- End of Content Wrapper -->

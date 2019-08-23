@@ -1,0 +1,10 @@
+.pointer {
+    cursor: pointer !important;
+}
+
+.active-selected,
+.active-selected a {
+    color: #f47274 !important;
+    font-weight: bold;
+    background-color: antiquewhite;
+}
